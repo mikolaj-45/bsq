@@ -6,7 +6,7 @@
 /*   By: emurbane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 19:45:52 by emurbane          #+#    #+#             */
-/*   Updated: 2025/07/16 22:57:30 by emurbane         ###   ########.fr       */
+/*   Updated: 2025/07/16 23:11:39 by emurbane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ t_point	**readmap(char *filename)
 	char		add_info[3];
 	int			lines;
 	t_point		**map;
-	t_rowinfo		info;
+	t_rowinfo	info;
 
 	if (read_file_to_buffer(filename, &buffer) == -1)
 		return (NULL);

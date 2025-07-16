@@ -6,7 +6,7 @@
 /*   By: emurbane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 22:08:29 by emurbane          #+#    #+#             */
-/*   Updated: 2025/07/16 22:30:09 by emurbane         ###   ########.fr       */
+/*   Updated: 2025/07/16 23:10:05 by emurbane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ void	free_map(t_point **map, int lines);
 int		ft_atoi(char *str);
 int		is_valid(char *add_info, int *lines, int header_len);
 int		fill_map(char *buffer, int pos, t_rowinfo info);
-int		alloc_and_fill_row(t_point **row, char *buffer, int pos, t_rowinfo info);
+int		alloc_and_fill_row(t_point **row, char *buffer,
+			int pos, t_rowinfo info);
 int		count_columns(char *buffer, int pos);
 int		open_file_and_allocate_buffer(char *filename, char **buffer);
 int		read_and_expand(int fd, char **buffer);
