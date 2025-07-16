@@ -79,12 +79,12 @@ int	count_columns(char *buffer, int pos)
 	return (columns);
 }
 
-int	alloc_and_fill_row(point **row, char *buffer, int pos, rowinfo info)
+int	alloc_and_fill_row(t_point **row, char *buffer, int pos, t_rowinfo info)
 {
 	int		x;
 	char	c;
 
-	*row = malloc(sizeof(point) * info.columns);
+	*row = malloc(sizeof(t_point) * info.columns);
 	if (!*row)
 		return (-1);
 	x = 0;

@@ -14,8 +14,9 @@
 #include "functions.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
 
-void	standard_map(point **map)
+void	standard_map(t_point **map)
 {
 	map = readmap("testfile.txt");
 	if (!map)
@@ -31,7 +32,7 @@ void	standard_map(point **map)
 int	main(int argc, char **argv)
 {
 	int		k;
-	point	**map;
+	t_point	**map;
 
 	k = 1;
 	if (argc == 1)
