@@ -21,6 +21,18 @@ int	main(int argc, char **argv)
 	point	**map;
 
 	k = 1;
+	if (argc == 1)
+	{
+		map = readmap("testfile.txt");
+		if (!map)
+		{
+			write(1, "map error\n", 10);
+			return ;
+		}
+		print_map(map, g_size_x, g_size_y);
+		find_main(map);
+		free_map(map, g_size_y);
+	}
 	while (k < argc)
 	{
 		if (k != 1)

@@ -22,7 +22,6 @@ void	loops(point **tab)
 {
 	int	i;
 	int	j;
-	int	current;
 
 	i = 0;
 	while (i < g_size_y)
@@ -72,8 +71,6 @@ void	find_square(int index_x, int index_y, point **tab)
 {
 	int	y_min;
 	int	x;
-	int	i;
-	int	j;
 
 	x = 0;
 	y_min = 1000000000;
