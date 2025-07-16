@@ -26,15 +26,13 @@ void	find_square(int index_x, int index_y, t_point **tab);
 void	print_board(t_point **tab);
 void	find_obs(t_point **t);
 void	find_main(t_point **tab);
-struct	point	**readmap(char *filename);
+t_point	**readmap(char *filename);
 void	print_map(t_point **map, int size_x, int size_y);
 void	free_map(t_point **map, int lines);
 int		ft_atoi(char *str);
 int		is_valid(char *add_info, int *lines, int header_len);
-int		fill_map(t_point **map, char *buffer, int pos, int lines,
-			int columns, t_rowinfo info);
-int		alloc_and_fill_row(t_point **row, char *buffer,
-			int pos, t_rowinfo info);
+int		fill_map(char *buffer, int pos, t_rowinfo info);
+int		alloc_and_fill_row(t_point **row, char *buffer, int pos, t_rowinfo info);
 int		count_columns(char *buffer, int pos);
 int		open_file_and_allocate_buffer(char *filename, char **buffer);
 int		read_and_expand(int fd, char **buffer);

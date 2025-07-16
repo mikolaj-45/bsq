@@ -36,8 +36,7 @@ int	is_valid(char *add_info, int *lines, int header_len)
 	return (0);
 }
 
-int	fill_map(t_point **map, char *buffer, int pos,
-	int lines, int columns, t_rowinfo info)
+int	fill_map(char *buffer, int pos, t_rowinfo info)
 {
 	int	y;
 
