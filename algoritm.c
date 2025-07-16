@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <unistd.h>
 #include "functions.h"
 #include "point.h"
 
@@ -31,7 +32,6 @@ void	loops(point **tab)
 		{
 			if (tab[i][j].visited != -1)
 			{
-				//printf("loop %d - %d\n", i, j);
 				find_square(j, i, tab);
 			}
 			j++;
@@ -60,7 +60,6 @@ void	give_value(point **tab, int index_x, int index_y, int x)
 	if (x > g_size || (x == g_size && index_x < g_dist_x)
 		|| (x == g_size && index_x == g_dist_x && index_y < g_dist_y))
 	{
-		//printf("x = %d, dist x = %d, dist y = %d\n", x, index_x, index_y);
 		g_size = x;
 		g_dist_x = index_x;
 		g_dist_y = index_y;
@@ -118,13 +117,5 @@ void	find_main(point **tab)
 	g_dist_y = 0;
 	find_obs(tab);
 	loops(tab);
-	printf("x = %d, dist x = %d, dist y =%d\n", g_size, g_dist_x, g_dist_y);
-	// for (int i = 0; i < g_size_y; i++){
-	// 	for(int j = 0; j < g_size_x; j++)
-	// 		printf("%d ", tab[i][j].visited);
-	// 	printf("\n");
-	// }
-	// printf("full = %c, empty = %c, obsticle = %c\n",
-	// 	g_full, g_empty, g_obsticle);
 	print_board(tab);
 }

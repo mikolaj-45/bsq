@@ -15,6 +15,19 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+void	standard_map(point **map)
+{
+	map = readmap("testfile.txt");
+	if (!map)
+	{
+		write(1, "map error\n", 10);
+		return ;
+	}
+	print_map(map, g_size_x, g_size_y);
+	find_main(map);
+	free_map(map, g_size_y);
+}
+
 int	main(int argc, char **argv)
 {
 	int		k;
@@ -22,17 +35,7 @@ int	main(int argc, char **argv)
 
 	k = 1;
 	if (argc == 1)
-	{
-		map = readmap("testfile.txt");
-		if (!map)
-		{
-			write(1, "map error\n", 10);
-			return ;
-		}
-		print_map(map, g_size_x, g_size_y);
-		find_main(map);
-		free_map(map, g_size_y);
-	}
+		standard_map(map);
 	while (k < argc)
 	{
 		if (k != 1)
@@ -51,8 +54,4 @@ int	main(int argc, char **argv)
 		free_map(map, g_size_y);
 		k++;
 	}
-    /*if (argc == 1)
-    {
-        
-    }*/
 }
