@@ -18,7 +18,6 @@
 
 void	standard_map(t_point **map)
 {
-	map = readmap("testfile.txt");
 	if (!map)
 	{
 		write(1, "map error\n", 10);
@@ -36,7 +35,10 @@ int	main(int argc, char **argv)
 
 	k = 1;
 	if (argc == 1)
+	{
+		map = readmap("testfile.txt");
 		standard_map(map);
+	}
 	while (k < argc)
 	{
 		if (k != 1)
