@@ -98,11 +98,11 @@ void	print_board(t_point **tab)
 		{
 			if (tab[i][j].visited == g_size && i < g_dist_y + g_size &&
 					i >= g_dist_y && j < g_dist_x + g_size && j >= g_dist_x)
-				write(1, "x", 1);
+				write(1, &g_full, 1);
 			else if (tab[i][j].visited == -1)
-				write(1, "o", 1);
+				write(1, &g_obsticle, 1);
 			else if (tab[i][j].visited >= 0)
-				write(1, ".", 1);
+				write(1, &g_empty, 1);
 			j++;
 		}
 		write(1, "\n", 1);

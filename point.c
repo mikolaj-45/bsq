@@ -10,10 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+#include <stdlib.h>
 #include "functions.h"
 #include "point.h"
 
-void	free_map(point **map, int lines)
+void	free_map(t_point **map, int lines)
 {
 	int	i;
 
@@ -28,7 +30,7 @@ void	free_map(point **map, int lines)
 	free(map);
 }
 
-void	print_map(point **map, int size_x, int size_y)
+void	print_map(t_point **map, int size_x, int size_y)
 {
 	int	i;
 	int	j;
@@ -40,9 +42,9 @@ void	print_map(point **map, int size_x, int size_y)
 		while (j < size_x)
 		{
 			if (map[i][j].visited == -1)
-				write(1, "o", 1);
+				write(1, &g_obsticle, 1);
 			else
-				write(1, ".", 1);
+				write(1, &g_empty, 1);
 			j++;
 		}
 		write(1, "\n", 1);
