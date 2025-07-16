@@ -19,7 +19,7 @@ int	g_size;
 int	g_dist_x;
 int	g_dist_y;
 
-void	loops(point **tab)
+void	loops(t_point **tab)
 {
 	int	i;
 	int	j;
@@ -40,7 +40,7 @@ void	loops(point **tab)
 	}
 }
 
-void	give_value(point **tab, int index_x, int index_y, int x)
+void	give_value(t_point **tab, int index_x, int index_y, int x)
 {
 	int	i;
 	int	j;
@@ -66,7 +66,7 @@ void	give_value(point **tab, int index_x, int index_y, int x)
 	}
 }
 
-void	find_square(int index_x, int index_y, point **tab)
+void	find_square(int index_x, int index_y, t_point **tab)
 {
 	int	y_min;
 	int	x;
@@ -85,7 +85,7 @@ void	find_square(int index_x, int index_y, point **tab)
 	give_value(tab, index_x, index_y, x);
 }
 
-void	print_board(point **tab)
+void	print_board(t_point **tab)
 {
 	int	i;
 	int	j;
@@ -110,7 +110,7 @@ void	print_board(point **tab)
 	}
 }
 
-void	find_main(point **tab)
+void	find_main(t_point **tab)
 {
 	g_size = 0;
 	g_dist_x = 0;
