@@ -50,9 +50,6 @@ int	main(int argc, char **argv)
 			k++;
 			continue ;
 		}
-		printf("%d %d\n", g_size_x, g_size_y);
-		print_map(map, g_size_x, g_size_y);
-		printf("aaa\n");
 		find_main(map);
 		free_map(map, g_size_y);
 		k++;
