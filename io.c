@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ioo.c                                              :+:      :+:    :+:   */
+/*   io.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emurbane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 19:45:52 by emurbane          #+#    #+#             */
-/*   Updated: 2025/07/16 21:59:18 by emurbane         ###   ########.fr       */
+/*   Updated: 2025/07/16 22:57:30 by emurbane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,9 +125,7 @@ t_point	**readmap(char *filename)
 	info.add_info = add_info;
 	info.map = map;
 	info.lines = lines;
-	if (validate_map(info) == -1)
-		return (NULL);
-	if (fill_map(buffer, g_pos, info) == -1)
+	if (validate_map(info) == -1 || fill_map(buffer, g_pos, info) == -1)
 		return (NULL);
 	return (map);
 }

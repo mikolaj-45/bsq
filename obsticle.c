@@ -6,7 +6,7 @@
 /*   By: emurbane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 22:03:03 by emurbane          #+#    #+#             */
-/*   Updated: 2025/07/16 22:03:07 by emurbane         ###   ########.fr       */
+/*   Updated: 2025/07/16 22:58:10 by emurbane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "functions.h"
 #include "point.h"
 
-void	find_obs(point **t)
+void	find_obs(t_point **t)
 {
 	int	i;
 	int	j;
