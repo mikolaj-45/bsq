@@ -65,7 +65,8 @@ int	parse_map_header(char *buffer, int *lines, int *headerlen, char add_info[3])
 	}
 	lines_str[j] = '\0';
 	*lines = atoi(lines_str);
-	is_valid(add_info, lines, *headerlen);
+	if (is_valid(add_info, lines, *headerlen) == -1)
+		return (-1);
 	return (0);
 }
 
@@ -125,7 +126,7 @@ t_point	**readmap(char *filename)
 	info.add_info = add_info;
 	info.map = map;
 	info.lines = lines;
-	if (validate_map(info) == -1 || fill_map(buffer, g_pos, info) == -1)
+	if (fill_map(buffer, g_pos, info) == -1)
 		return (NULL);
 	return (map);
 }
