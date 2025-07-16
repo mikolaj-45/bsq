@@ -6,7 +6,7 @@
 /*   By: emurbane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 19:45:52 by emurbane          #+#    #+#             */
-/*   Updated: 2025/07/16 23:11:39 by emurbane         ###   ########.fr       */
+/*   Updated: 2025/07/16 23:17:47 by emurbane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ int	parse_map_header(char *buffer, int *lines, int *headerlen, char add_info[3])
 	add_info[2] = buffer[i - 1];
 	add_info[1] = buffer[i - 2];
 	add_info[0] = buffer[i - 3];
+	g_obsticle = add_info[1];
+	g_empty = add_info[0];
 	while (j < i - 3 && j < 15)
 	{
 		lines_str[j] = buffer[j];
@@ -89,6 +91,7 @@ int	alloc_and_fill_row(t_point **row, char *buffer, int pos, t_rowinfo info)
 	if (!*row)
 		return (-1);
 	x = 0;
+	g_full = info.add_info[2];
 	while (x < info.columns)
 	{
 		c = buffer[pos + x];
