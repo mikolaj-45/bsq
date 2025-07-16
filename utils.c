@@ -1,4 +1,17 @@
-//#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: user <user@42.fr>                           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/16 21:55:00 by user              #+#    #+#             */
+/*   Updated: 2025/07/16 21:55:00 by user             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
 int	print_nb(char *array, int i, int count)
 {
 	int	num;
@@ -10,13 +23,10 @@ int	print_nb(char *array, int i, int count)
 	{
 		num += (array[i] - '0') * mul;
 		mul *= 10;
-		i --;
+		i--;
 	}
 	if (count % 2 != 0)
-	{
 		num *= -1;
-		return (num);
-	}
 	return (num);
 }
 
@@ -25,11 +35,11 @@ int	countf(char *str)
 	int	count;
 
 	count = 0;
-	while (*str < 47)
+	while (*str && *str < 48)
 	{
 		if (*str == '-')
-			count ++;
-		str ++;
+			count++;
+		str++;
 	}
 	return (count);
 }
@@ -44,21 +54,19 @@ int	ft_atoi(char *str)
 	count = countf(str);
 	while (*str)
 	{
-		if (*str > 47 && *str < 58)
+		if (*str >= '0' && *str <= '9')
 		{
-			while (*str > 47 && *str < 58)
+			while (*str >= '0' && *str <= '9')
 			{
 				array[i++] = *str;
-				str ++;
+				str++;
 			}
 			break ;
 		}
 		else if (*str == '+' || *str == ' ' || *str == '-')
-		{
-			str ++;
-			continue ;
-		}
-		break ;
+			str++;
+		else
+			break ;
 	}
 	return (print_nb(array, i - 1, count));
 }
