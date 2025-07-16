@@ -23,5 +23,7 @@ typedef struct rowinfo
 {
 	int		columns;
 	char	*add_info;
+	t_point **map;
+	int lines;
 }	t_rowinfo;
 #endif

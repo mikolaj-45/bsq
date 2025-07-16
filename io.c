@@ -102,13 +102,13 @@ int	alloc_and_fill_row(point **row, char *buffer, int pos, rowinfo info)
 	return (0);
 }
 
-point	**readmap(char *filename)
+t_point	**readmap(char *filename)
 {
 	char		*buffer;
 	char		add_info[3];
 	int			lines;
-	point		**map;
-	rowinfo		info;
+	t_point		**map;
+	t_rowinfo		info;
 
 	if (read_file_to_buffer(filename, &buffer) == -1)
 		return (NULL);
@@ -118,12 +118,16 @@ point	**readmap(char *filename)
 	g_pos = g_headerlen + 1;
 	g_columns = count_columns(buffer, g_pos);
 	g_size_x = g_columns;
-	map = malloc(sizeof(point *) * lines);
+	map = malloc(sizeof(t_point *) * lines);
 	if (!map)
 		return (NULL);
 	info.columns = g_columns;
 	info.add_info = add_info;
-	if (fill_map(map, buffer, g_pos, lines, g_columns, info) == -1)
+	info.map = map;
+	info.lines = lines;
+	if (validate_map(info) == -1)
+		return (NULL);
+	if (fill_map(buffer, g_pos, info) == -1)
 		return (NULL);
 	return (map);
 }
